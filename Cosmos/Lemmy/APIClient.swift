@@ -1,0 +1,158 @@
+//
+//  APIClient.swift
+//  Cosmos
+//
+//  Created by Bosco Ho on 2023-08-24.
+//
+
+//  Adapted from:
+//
+//  APIClient.swift
+//  Mlem
+//
+//  Created by Nicholas Lawson on 04/06/2023.
+//
+
+import Foundation
+
+struct APIErrorResponse: Decodable {
+    let error: String
+}
+
+private let possibleCredentialErrors = [
+    "incorrect_password",
+    "password_incorrect",
+    "incorrect_login",
+    "couldnt_find_that_username_or_email"
+]
+
+extension APIErrorResponse {
+    var isIncorrectLogin: Bool { possibleCredentialErrors.contains(error) }
+    var requires2FA: Bool { error == "missing_totp_token" }
+    var isNotLoggedIn: Bool { error == "not_logged_in" }
+}
+
+
+enum HTTPMethod {
+    case get
+    case post(Data)
+}
+
+enum APIClientError: Error {
+    case encoding(Error)
+    case networking(Error)
+    case response(APIErrorResponse, Int?)
+    case cancelled
+    case invalidSession
+}
+
+struct APISession {
+    let token: String
+    let URL: URL
+}
+
+class APIClient {
+    
+    let urlSession: URLSession
+    let decoder: JSONDecoder
+    
+    private var _session: APISession?
+    private var session: APISession {
+        get throws {
+            guard let _session else {
+                throw APIClientError.invalidSession
+            }
+            
+            return _session
+        }
+    }
+    
+    // MARK: - Initialisation
+    
+    init(session: URLSession = .init(configuration: .default), decoder: JSONDecoder = .defaultDecoder) {
+        self.urlSession = session
+        self.decoder = decoder
+    }
+    
+    // MARK: - Public methods
+    
+    /// Configures the clients session based on the passed in account
+    /// - Parameter account: a `SavedAccount` to use when configuring the clients session
+    func configure(for account: SavedAccount) {
+        self._session = .init(token: account.accessToken, URL: account.instanceLink)
+    }
+    
+    @discardableResult
+    func perform<Request: APIRequest>(request: Request) async throws -> Request.Response {
+        
+        let urlRequest = try urlRequest(from: request)
+        
+        let (data, response) = try await execute(urlRequest)
+        
+        if let response = response as? HTTPURLResponse {
+            if response.statusCode >= 500 { // Error code for server being offline.
+                throw APIClientError.response(
+                    APIErrorResponse.init(error: "Instance appears to be offline.\nTry again later."),
+                    response.statusCode
+                )
+            }
+        }
+        
+        if let apiError = try? decoder.decode(APIErrorResponse.self, from: data) {
+            // at present we have a single error model which appears to be used throughout
+            // the API, however we may way to consider adding the error model type as an
+            // associated value in the same was as the response to allow requests to define
+            // their own error models when necessary, or drop back to this as the default...
+            
+            if apiError.isNotLoggedIn {
+                throw APIClientError.invalidSession
+            }
+            
+            let statusCode = (response as? HTTPURLResponse)?.statusCode
+            throw APIClientError.response(apiError, statusCode)
+        }
+        
+        return try decoder.decode(Request.Response.self, from: data)
+    }
+    
+    // MARK: - Private methods
+    
+    private func execute(_ urlRequest: URLRequest) async throws -> (Data, URLResponse) {
+        do {
+            return try await urlSession.data(for: urlRequest)
+        } catch {
+            if case URLError.cancelled = error as NSError {
+                throw APIClientError.cancelled
+            } else {
+                throw APIClientError.networking(error)
+            }
+        }
+    }
+    
+    private func urlRequest(from defintion: any APIRequest) throws -> URLRequest {
+        var urlRequest = URLRequest(url: defintion.endpoint)
+        defintion.headers.forEach { header in
+            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
+        }
+        
+        if defintion as? any APIGetRequest != nil {
+            urlRequest.httpMethod = "GET"
+        } else if let postDefinition = defintion as? any APIPostRequest {
+            urlRequest.httpMethod = "POST"
+            urlRequest.httpBody = try createBodyData(for: postDefinition)
+        } else if let putDefinition = defintion as? any APIPutRequest {
+            urlRequest.httpMethod = "PUT"
+            urlRequest.httpBody = try createBodyData(for: putDefinition)
+        }
+        
+        return urlRequest
+    }
+    
+    private func createBodyData(for defintion: any APIRequestBodyProviding) throws -> Data {
+        do {
+            return try JSONEncoder().encode(defintion.body)
+        } catch {
+            throw APIClientError.encoding(error)
+        }
+    }
+}

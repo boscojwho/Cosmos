@@ -24,6 +24,8 @@ struct ContentView: View {
         "account id 3"
     ]
     
+    @State private var isPresentedAddAccountSheet: Bool = false
+    
     @State private var constellation: String? = Self.constellations.first
     @State private var identity: String? = Self.identities.first
     
@@ -42,12 +44,26 @@ struct ContentView: View {
             #if os(macOS)
             .navigationSubtitle("My Identities")
             #endif
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        isPresentedAddAccountSheet = true
+                    }, label: {
+                        Image(systemName: "plus.app.fill")
+                    })
+                }
+            }
+            .sheet(isPresented: $isPresentedAddAccountSheet) {
+                AddAccountView()
+            }
         } detail: {
             List {
                 Text("some community")
             }
             .navigationTitle("Communities")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
         }
     }
 }

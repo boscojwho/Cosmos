@@ -24,6 +24,7 @@ enum EndpointDiscoveryError: Error {
 extension URL {
     
     /// - Parameter lemmyInstance: For example: `lemmy.ca` or `www.lemmy.ml`, as long as the base address is valid.
+    /// - Returns: Returns `nil` if address sanitization fails, otherwise throws error.
     init?(lemmyInstance: String) async throws {
         /// Sanitize
         guard let match = lemmyInstance.firstMatch(of: /^(?:https?:\/\/)?(?:www\.)?(?:[\.\s]*)([^\/\?]+?)(?:[\.\s]*$|\/)/) else {
@@ -71,11 +72,11 @@ extension URL {
             }
         }
         
-        if let validAddress {
-            self = validAddress
+        guard let validAddress else {
+            throw EndpointDiscoveryError.couldNotFindAnyCorrectEndpoints
         }
         
-        throw EndpointDiscoveryError.couldNotFindAnyCorrectEndpoints
+        self = validAddress
     }
     
     private func checkIfEndpointExists() async -> Bool {

@@ -19,6 +19,18 @@
 		E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */; };
 		E4A53A9F2A9768DC009C8B93 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */; };
 		E4A53AA12A97693A009C8B93 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AA02A97693A009C8B93 /* LoginRequest.swift */; };
+		E4A53AA52A976AE2009C8B93 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AA42A976AE2009C8B93 /* AddAccountView.swift */; };
+		E4A53AA72A977344009C8B93 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AA62A977344009C8B93 /* APIClient.swift */; };
+		E4A53AA92A977373009C8B93 /* JSONDecoder+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AA82A977373009C8B93 /* JSONDecoder+Default.swift */; };
+		E4A53AAB2A9773DA009C8B93 /* SavedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AAA2A9773DA009C8B93 /* SavedAccount.swift */; };
+		E4A53AB22A9776F5009C8B93 /* APIPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AAC2A9776F4009C8B93 /* APIPerson.swift */; };
+		E4A53AB32A9776F5009C8B93 /* APIPersonAggregates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AAD2A9776F5009C8B93 /* APIPersonAggregates.swift */; };
+		E4A53AB42A9776F5009C8B93 /* APIPersonMentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AAE2A9776F5009C8B93 /* APIPersonMentionView.swift */; };
+		E4A53AB52A9776F5009C8B93 /* APIPersonMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AAF2A9776F5009C8B93 /* APIPersonMention.swift */; };
+		E4A53AB62A9776F5009C8B93 /* APIPersonUnreadCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AB02A9776F5009C8B93 /* APIPersonUnreadCounts.swift */; };
+		E4A53AB72A9776F5009C8B93 /* APIPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AB12A9776F5009C8B93 /* APIPersonView.swift */; };
+		E4A53ABA2A97771B009C8B93 /* GetPersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AB92A97771B009C8B93 /* GetPersonDetails.swift */; };
+		E4A53ABC2A9777BB009C8B93 /* PostSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53ABB2A9777BB009C8B93 /* PostSortType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +66,19 @@
 		E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Lemmy.swift"; sourceTree = "<group>"; };
 		E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		E4A53AA02A97693A009C8B93 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		E4A53AA42A976AE2009C8B93 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
+		E4A53AA62A977344009C8B93 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E4A53AA82A977373009C8B93 /* JSONDecoder+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Default.swift"; sourceTree = "<group>"; };
+		E4A53AAA2A9773DA009C8B93 /* SavedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAccount.swift; sourceTree = "<group>"; };
+		E4A53AAC2A9776F4009C8B93 /* APIPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPerson.swift; sourceTree = "<group>"; };
+		E4A53AAD2A9776F5009C8B93 /* APIPersonAggregates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersonAggregates.swift; sourceTree = "<group>"; };
+		E4A53AAE2A9776F5009C8B93 /* APIPersonMentionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersonMentionView.swift; sourceTree = "<group>"; };
+		E4A53AAF2A9776F5009C8B93 /* APIPersonMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersonMention.swift; sourceTree = "<group>"; };
+		E4A53AB02A9776F5009C8B93 /* APIPersonUnreadCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersonUnreadCounts.swift; sourceTree = "<group>"; };
+		E4A53AB12A9776F5009C8B93 /* APIPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersonView.swift; sourceTree = "<group>"; };
+		E4A53AB92A97771B009C8B93 /* GetPersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPersonDetails.swift; sourceTree = "<group>"; };
+		E4A53ABB2A9777BB009C8B93 /* PostSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSortType.swift; sourceTree = "<group>"; };
+		E4A53ABD2A977AEC009C8B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +130,10 @@
 		E4A53A682A975730009C8B93 /* Cosmos */ = {
 			isa = PBXGroup;
 			children = (
+				E4A53ABD2A977AEC009C8B93 /* Info.plist */,
 				E4A53A692A975730009C8B93 /* CosmosApp.swift */,
 				E4A53A6B2A975730009C8B93 /* ContentView.swift */,
+				E4A53AA42A976AE2009C8B93 /* AddAccountView.swift */,
 				E4A53A962A976086009C8B93 /* Keychain */,
 				E4A53A942A976040009C8B93 /* Lemmy */,
 				E4A53A6D2A975733009C8B93 /* Assets.xcassets */,
@@ -145,8 +172,14 @@
 			isa = PBXGroup;
 			children = (
 				E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */,
+				E4A53AA82A977373009C8B93 /* JSONDecoder+Default.swift */,
+				E4A53AA62A977344009C8B93 /* APIClient.swift */,
+				E4A53AAA2A9773DA009C8B93 /* SavedAccount.swift */,
 				E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */,
 				E4A53AA02A97693A009C8B93 /* LoginRequest.swift */,
+				E4A53AB92A97771B009C8B93 /* GetPersonDetails.swift */,
+				E4A53ABB2A9777BB009C8B93 /* PostSortType.swift */,
+				E4A53AB82A9776F9009C8B93 /* Person */,
 			);
 			path = Lemmy;
 			sourceTree = "<group>";
@@ -157,6 +190,19 @@
 				E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		E4A53AB82A9776F9009C8B93 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				E4A53AAC2A9776F4009C8B93 /* APIPerson.swift */,
+				E4A53AAD2A9776F5009C8B93 /* APIPersonAggregates.swift */,
+				E4A53AAF2A9776F5009C8B93 /* APIPersonMention.swift */,
+				E4A53AAE2A9776F5009C8B93 /* APIPersonMentionView.swift */,
+				E4A53AB02A9776F5009C8B93 /* APIPersonUnreadCounts.swift */,
+				E4A53AB12A9776F5009C8B93 /* APIPersonView.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,12 +341,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A53AA52A976AE2009C8B93 /* AddAccountView.swift in Sources */,
 				E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */,
+				E4A53AB22A9776F5009C8B93 /* APIPerson.swift in Sources */,
 				E4A53A6C2A975730009C8B93 /* ContentView.swift in Sources */,
+				E4A53AB52A9776F5009C8B93 /* APIPersonMention.swift in Sources */,
+				E4A53AA92A977373009C8B93 /* JSONDecoder+Default.swift in Sources */,
+				E4A53AA72A977344009C8B93 /* APIClient.swift in Sources */,
+				E4A53ABC2A9777BB009C8B93 /* PostSortType.swift in Sources */,
 				E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */,
 				E4A53AA12A97693A009C8B93 /* LoginRequest.swift in Sources */,
+				E4A53ABA2A97771B009C8B93 /* GetPersonDetails.swift in Sources */,
 				E4A53A9F2A9768DC009C8B93 /* APIRequest.swift in Sources */,
+				E4A53AB72A9776F5009C8B93 /* APIPersonView.swift in Sources */,
 				E4A53A6A2A975730009C8B93 /* CosmosApp.swift in Sources */,
+				E4A53AB62A9776F5009C8B93 /* APIPersonUnreadCounts.swift in Sources */,
+				E4A53AAB2A9773DA009C8B93 /* SavedAccount.swift in Sources */,
+				E4A53AB32A9776F5009C8B93 /* APIPersonAggregates.swift in Sources */,
+				E4A53AB42A9776F5009C8B93 /* APIPersonMentionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +522,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cosmos/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -502,6 +561,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cosmos/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
