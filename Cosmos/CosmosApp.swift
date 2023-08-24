@@ -13,5 +13,14 @@ struct CosmosApp: App {
         WindowGroup {
             ContentView()
         }
+        #if os(macOS)
+        .windowStyle(.titleBar)
+        .windowToolbarStyle(.expanded)
+        #endif
+        #if os(macOS) || os(iOS)
+        .commands {
+            SidebarCommands()
+        }
+        #endif
     }
 }
