@@ -16,6 +16,7 @@
 		E4A53A882A975733009C8B93 /* CosmosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A872A975733009C8B93 /* CosmosUITestsLaunchTests.swift */; };
 		E4A53A992A976152009C8B93 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E4A53A982A976152009C8B93 /* KeychainAccess */; };
 		E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */; };
+		E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E4A53A852A975733009C8B93 /* CosmosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosUITests.swift; sourceTree = "<group>"; };
 		E4A53A872A975733009C8B93 /* CosmosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
+		E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Lemmy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		E4A53A942A976040009C8B93 /* Lemmy */ = {
 			isa = PBXGroup;
 			children = (
+				E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */,
 			);
 			path = Lemmy;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */,
 				E4A53A6C2A975730009C8B93 /* ContentView.swift in Sources */,
 				E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */,
 				E4A53A6A2A975730009C8B93 /* CosmosApp.swift in Sources */,
