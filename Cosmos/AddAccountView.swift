@@ -125,6 +125,9 @@ struct AddAccountView: View {
         
         AppKeychain.storage["\(newAccount.id)_accessToken"] = response.jwt
         
+        // - TODO: Save `SavedAccount` info to persistent storage
+        // Can we save all that info inside KeychainAccess?
+        
         dismiss()
     }
     
