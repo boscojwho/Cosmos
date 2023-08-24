@@ -14,6 +14,8 @@
 		E4A53A7C2A975733009C8B93 /* CosmosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A7B2A975733009C8B93 /* CosmosTests.swift */; };
 		E4A53A862A975733009C8B93 /* CosmosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A852A975733009C8B93 /* CosmosUITests.swift */; };
 		E4A53A882A975733009C8B93 /* CosmosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A872A975733009C8B93 /* CosmosUITestsLaunchTests.swift */; };
+		E4A53A992A976152009C8B93 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E4A53A982A976152009C8B93 /* KeychainAccess */; };
+		E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		E4A53A812A975733009C8B93 /* CosmosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A53A852A975733009C8B93 /* CosmosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosUITests.swift; sourceTree = "<group>"; };
 		E4A53A872A975733009C8B93 /* CosmosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A53A992A976152009C8B93 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,8 @@
 			children = (
 				E4A53A692A975730009C8B93 /* CosmosApp.swift */,
 				E4A53A6B2A975730009C8B93 /* ContentView.swift */,
+				E4A53A962A976086009C8B93 /* Keychain */,
+				E4A53A942A976040009C8B93 /* Lemmy */,
 				E4A53A6D2A975733009C8B93 /* Assets.xcassets */,
 				E4A53A6F2A975733009C8B93 /* Cosmos.entitlements */,
 				E4A53A702A975733009C8B93 /* Preview Content */,
@@ -129,6 +135,21 @@
 			path = CosmosUITests;
 			sourceTree = "<group>";
 		};
+		E4A53A942A976040009C8B93 /* Lemmy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lemmy;
+			sourceTree = "<group>";
+		};
+		E4A53A962A976086009C8B93 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +166,9 @@
 			dependencies = (
 			);
 			name = Cosmos;
+			packageProductDependencies = (
+				E4A53A982A976152009C8B93 /* KeychainAccess */,
+			);
 			productName = Cosmos;
 			productReference = E4A53A662A975730009C8B93 /* Cosmos.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +241,9 @@
 				Base,
 			);
 			mainGroup = E4A53A5D2A975730009C8B93;
+			packageReferences = (
+				E4A53A972A976152009C8B93 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = E4A53A672A975730009C8B93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A53A6C2A975730009C8B93 /* ContentView.swift in Sources */,
+				E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */,
 				E4A53A6A2A975730009C8B93 /* CosmosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4A53A972A976152009C8B93 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4A53A982A976152009C8B93 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4A53A972A976152009C8B93 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4A53A5E2A975730009C8B93 /* Project object */;
 }
