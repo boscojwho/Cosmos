@@ -17,22 +17,28 @@ import Foundation
 
 enum EndpointDiscoveryError: Error {
     case couldNotFindAnyCorrectEndpoints
+    /// v1 is deprecated(?)
+    case incompatibleVersion
 }
 
 extension URL {
     
     /// - Parameter lemmyInstance: For example: `lemmy.ca` or `www.lemmy.ml`, as long as the base address is valid.
     init?(lemmyInstance: String) async throws {
+        /// Sanitize
         guard let match = lemmyInstance.firstMatch(of: /^(?:https?:\/\/)?(?:www\.)?(?:[\.\s]*)([^\/\?]+?)(?:[\.\s]*$|\/)/) else {
             return nil
         }
-        guard let url = try await URL(instanceBaseAddress: String(match.output.1)) else {
-            return nil
+        
+        let url = try await URL(instanceBaseAddress: String(match.output.1))
+        guard url.path().contains("v1") == false else {
+            throw EndpointDiscoveryError.incompatibleVersion
         }
+        
         self = url
     }
     
-    private init?(instanceBaseAddress: String) async throws {
+    private init(instanceBaseAddress: String) async throws {
         var validAddress: URL?
         
 #if targetEnvironment(simulator)
