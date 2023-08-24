@@ -18,6 +18,7 @@
 		E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */; };
 		E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */; };
 		E4A53A9F2A9768DC009C8B93 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */; };
+		E4A53AA12A97693A009C8B93 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A53AA02A97693A009C8B93 /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E4A53A9A2A97615D009C8B93 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
 		E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Lemmy.swift"; sourceTree = "<group>"; };
 		E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		E4A53AA02A97693A009C8B93 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				E4A53A9C2A976403009C8B93 /* URL+Lemmy.swift */,
 				E4A53A9E2A9768DC009C8B93 /* APIRequest.swift */,
+				E4A53AA02A97693A009C8B93 /* LoginRequest.swift */,
 			);
 			path = Lemmy;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				E4A53A9D2A976403009C8B93 /* URL+Lemmy.swift in Sources */,
 				E4A53A6C2A975730009C8B93 /* ContentView.swift in Sources */,
 				E4A53A9B2A97615D009C8B93 /* KeychainAccess.swift in Sources */,
+				E4A53AA12A97693A009C8B93 /* LoginRequest.swift in Sources */,
 				E4A53A9F2A9768DC009C8B93 /* APIRequest.swift in Sources */,
 				E4A53A6A2A975730009C8B93 /* CosmosApp.swift in Sources */,
 			);
